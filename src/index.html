@@ -27,18 +27,18 @@
         <case n="'text'">
           <include src="partials/paragraph.html"></include>
         </case>
+        <case n="'subhed'">
+          <include src="partials/subhed.html"></include>
+        </case>
         <case n="'graphic'">
           <div class="graphic">
-            <if condition="item.value.asset === 'linguistics-1.html'">
-              <include src="linguistics-1.html"></include>
+            <if condition="item.value.asset === 'graphic-name.html'">
+              <include src="graphic-name.html"></include>
             </if>
-            <elseif condition="item.value.asset === 'linguistics-2.html'">
-              <include src="linguistics-2.html"></include>
-            </elseif>
-            <elseif condition="item.value.asset === 'linguistics-3.html'">
-              <include src="linguistics-3.html"></include>
-            </elseif>
           </div>
+        </case>
+        <case n="'image'">
+          <include src="partials/image.html"></include>
         </case>
       </switch>
     </each>

@@ -1,0 +1,11 @@
+{
+  "plugins": {
+    "posthtml-include": {
+      "root": "./src"
+    },
+    "posthtml-expressions": {
+      "root": "./src/partials",
+      "locals": {"headline":"Headline","deck":"Deck","date":"September 29, 2019","byline":"By Gavrielle Jacobovitz","credits":"Edited by Julian Shen-Berro\nGraphics and production by Jason Kao\nVideography by Amelia Milne","footer":"Produced by TK.","top":{"cover":"","caption":"","steps":["First step","Second step","Third step"]},"body":[{"type":"text","value":"Lead. The Sackler family amassed a fortune of <a href=\"https://fortune.com/2019/08/28/sackler-family-billionaires-opioid-crisis-lawsuits/\">$13 billion</a> from their pharmaceutical businesses. They lived large, donating enormous amounts of money to cultural and academic institutions. Their gifts to Columbia <a href=\"https://www.wsj.com/articles/institutions-rethink-donations-from-purdue-pharmas-sackler-family-11550668162\">won them</a> the closest thing to institutional approval you can get: an institute, a professorship, and an award, all in their name."},{"type":"subhed","value":"Reports"},{"type":"text","value":"Their company, Purdue Pharma L.P., made $31 billion dollars in revenue from Oxycontin, a drug at the center of America’s opioid epidemic. The company, and the family at its head, have become signifiers of pharmaceutical misconduct. Purdue, alongside several other opioid manufacturers, is embroiled in <a href=\"https://www.vox.com/policy-and-politics/2017/6/7/15724054/opioid-epidemic-lawsuits-purdue-oxycontin\">lawsuits</a> that allege the companies aggressively marketed the drugs, overstated the benefits of opioids, and ignored the consequences of its addictive nature."},{"type":"graphic","value":{"width":"","asset":""}},{"type":"text","value":"<i>Enjoy leafing through our fifth issue!"},{"type":"text","value":"</i>"},{"type":"text","value":"<a href=\"https://www.columbiaspectator.com/eye/issue/XXVII/IV/\">Previous Issue</a> | <a href=\"https://www.columbiaspectator.com/eye/issue/XXVII/V/\">More in This Issue</a>"}],"DOC_URL":"https://docs.google.com/document/d/1OJLCPW8FgAetQchg_53hNmaPSnCPl7E-xdhARsPCzx8/edit","USE_COVER_HED":false}
+    }
+  }
+}

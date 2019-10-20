@@ -19,12 +19,11 @@ h1, p {
 }
 
 a {
-  color: #337ab7;
+  color: #5ec2c2;
   text-decoration: none;
 }
 
 a:hover {
-  color: #23527c;
   text-decoration: underline;
 }
 
@@ -174,6 +173,7 @@ header {
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .credits {
@@ -338,10 +338,18 @@ header {
 }
 
 .paragraph {
-  margin-bottom: 20px;
   font-family: $georgia;
   font-size: 19px;
   line-height: 1.63;
+}
+
+.subhed {
+  margin-top: 40px;
+  font-family: $georgia;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.63;
+  font-weight: bold;
 }
 
 .image {
