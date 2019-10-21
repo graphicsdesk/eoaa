@@ -1,0 +1,15 @@
+/* These stylels remove the Ellipsis default styles for a web page */
+
+.pb-container {
+    width: 100%;
+}
+
+.pb-f-eye-article-article-navbar,
+.pb-f-eye-lead-template-feature-image-title,
+.pb-f-eye-lead-template-eye-lead-leaderboad-ad {
+    display: none;
+}
+
+#ver-in-article-ad-placement, #hor-in-article-ad-placement {
+    display: none;
+}
