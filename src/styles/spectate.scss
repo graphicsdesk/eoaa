@@ -10,7 +10,6 @@ $fade-transition-duration: 0.25s;
 
 body {
   margin: 0;
-  padding-bottom: 40px; 
 }
 
 h1, p {
@@ -47,7 +46,7 @@ b {
   margin-bottom: 60px;
 
   header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     max-width: 760px;
     color: #fff;
     transform: translateY(-150%); // TODO: do better;

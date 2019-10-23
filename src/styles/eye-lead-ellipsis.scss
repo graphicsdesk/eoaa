@@ -13,3 +13,20 @@
 #ver-in-article-ad-placement, #hor-in-article-ad-placement {
     display: none;
 }
+
+.tli-author {
+    display: none;
+}
+
+.tli-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tli-wrapper > p:nth-child(2) {
+    margin: 0;
+}
+
+.pb-f-eye-lead-template-article-text .tli-wrapper img {
+    margin: 0 !important;
+}
