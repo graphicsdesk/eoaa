@@ -8,7 +8,7 @@ import { USE_COVER_HED } from '../config.yml';
 const navbar = document.getElementById('navbar');
 enterView({
   selector: '.headline',
-  offset: 0.4,
+  offset: 0.93,
   enter: () => {
     navbar.classList.remove('only-logo');
   },
@@ -26,7 +26,7 @@ export function hamburgerTrigger() {
 
 // Text balance headline and deck
 
-textBalancer.balanceText('.headline, .deck, .image-overlay .image-caption');
+textBalancer.balanceText('.headline, .deck, .video-step p');
 
 /* SVG icon stuff
 

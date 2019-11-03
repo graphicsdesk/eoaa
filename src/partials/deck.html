@@ -1,0 +1,19 @@
+<div class="deck-overlay" id="deck-overlay">
+  <div class="cover">
+    <video id="video-cover" autoplay loop muted>
+      <source src="../assets/Trimmed.mp4"></source>
+    </video>
+  </div>
+
+  <!-- TODO: mimic this positioning
+    https://www.nytimes.com/interactive/2019/09/14/world/europe/notre-dame-fire-lead.html
+  -->
+
+  <div class="step-deck" id="step-deck" style="letter-spacing: 0.5px">
+    <each loop="step in top">
+      <div class="video-step">
+        <p>{{ step.value }}</p>
+      </div>
+    </each>
+  </div>
+</div>
