@@ -1,2 +1,10 @@
 USE_COVER_HED: false
 DOC_URL: https://docs.google.com/document/d/1OJLCPW8FgAetQchg_53hNmaPSnCPl7E-xdhARsPCzx8/edit
+
+INTRO_LINK: index-0.html
+PART1_LINK: index-1.html
+PART2_LINK: index-2.html
+
+INTRO_LINK_OLD: https://www.columbiaspectator.com/eye-lead/2019/10/23/is-columbias-department-system-ready-to-evolve/
+PART1_LINK_OLD: https://www.columbiaspectator.com/eye-lead/2019/10/23/is-columbias-department-system-ready-to-evolve/
+PART2_LINK_OLD: https://www.columbiaspectator.com/eye-lead/2019/10/23/is-columbias-department-system-ready-to-evolve/

@@ -1,2 +1,10 @@
 @import 'styles/spectate';
 @import 'styles/eye-lead-ellipsis';
+
+pageConfig {
+  display: none;
+}
+
+body.page-0 .headline-part {
+  display: none;
+}

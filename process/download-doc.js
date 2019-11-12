@@ -95,10 +95,15 @@ async function readDoc(auth) {
     LOCALS_FILLER_STR,
     JSON.stringify({
       ...doc,
-      DOC_URL: config.DOC_URL,
-      USE_COVER_HED: config.USE_COVER_HED,
+      ...config,
     }),
   );
+
+  await fsPromise.writeFile(
+    path.join(process.cwd(), './data/doc.json'),
+    JSON.stringify(doc),
+  );
+  console.log('[download-doc] Successfully wrote ./data/doc.json');
 
   await fsPromise.writeFile(
     path.join(process.cwd(), '.posthtmlrc'),

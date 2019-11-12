@@ -1,5 +1,7 @@
 @import 'fonts';
 
+$eye-theme: #5ec2c2;
+
 $gbody-width: 600px;
 $gbody-padding: 20px;
 
@@ -18,7 +20,7 @@ h1, p {
 }
 
 a {
-  color: #5ec2c2;
+  color: $eye-theme;
   text-decoration: none;
 }
 
@@ -95,7 +97,7 @@ header {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 36px 15px;
+  padding: 36px 15px 32px;
 
   p {
     margin: 0;
@@ -111,11 +113,24 @@ header {
 
   .headline {
     margin: 0;
-    margin-top: 50px;
+    margin-top: 25px;
     font-size: 65px;
     line-height: 1;
     font-weight: bold;
-    margin-bottom: 14px;
+    margin-bottom: 17px;
+    text-align: center;
+    font-weight: 700;
+    font-family: Playfair Display;
+  }
+
+  .headline-part {
+    border-top: 2px solid #121212;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 55px;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 30px;
     text-align: center;
     font-weight: 700;
     font-family: Playfair Display;
@@ -159,7 +174,7 @@ header {
   margin-bottom: 0;
 
   p {
-    background-color: rgba(0, 0, 0, 0.58);
+    background-color: rgba(0, 0, 0, 0.66);
     padding: 0 7px 7px;
     font-family: Playfair Display;
     font-size: 30px;
@@ -265,23 +280,75 @@ header {
   }
 }
 
+#logo {
+  display: flex;
+}
+
+#nav-section-name {
+  display: none; // turns inline on small screen sizes
+  font-family: $georgia;
+  font-size: 17px;
+  font-weight: 600;
+  color: #121212;
+  align-self: center;
+  margin-left: 13px;
+  opacity: 0;
+  transition: opacity $fade-transition-duration;
+}
+
+#nav-section-name.show {
+  opacity: 1;
+}
+
 #nav-links {
   flex: 1 1;
   display: flex;
-  align-items: center;
   transition-duration: $fade-transition-duration;
 
-  a {
+  div.nav-link {
     margin: 0;
     margin-left: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transition: border $fade-transition-duration;
+
+    &.nav-link-highlighted {      
+      border-bottom: 3px solid $eye-theme;
+    }
+  }
+
+  div.nav-link:hover {
+    border-bottom: 3px solid $eye-theme;
+  }
+
+  a {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: $graphik;
     font-size: 14px;
     color: #121212;
     text-decoration: none;
   }
+}
 
-  a:hover {
-    text-decoration: underline;
+.dinkus {
+  text-align: center;
+}
+
+// Text sizes on small screens
+@media (max-width: 600px) {
+  .video-step p {
+    font-size: 25px;
+  }
+
+  .step-deck {
+    margin-top: -40vh;
   }
 }
 
@@ -295,11 +362,11 @@ header {
     visibility: hidden;
     opacity: 0;
     flex-direction: column;
+    background: #fff;
+    align-items: center;
 
-    a {
-      width: 100%;
+    div.nav-link {
       text-align: center;
-      background: #fff;
       padding: 17px 0;
       margin-left: 0;
     }
@@ -334,6 +401,12 @@ header {
 
   #eye-logo {
     width: 72px;
+    position: relative;
+    right: 2px;
+  }
+
+  #nav-section-name {
+    display: inline;
   }
 
   .hamburger-btn {
@@ -354,6 +427,22 @@ header {
   font-size: 22px;
   line-height: 1.63;
   font-weight: bold;
+}
+
+.pullquote {
+  max-width: $gbody-width;
+  width: calc(100% - #{2 * $gbody-padding});
+  margin: 40px auto;
+  padding: 10px 0 18px;
+
+  border-top: 2px solid #121212;
+  border-bottom: 2px solid #121212;
+
+  font-size: 40px;
+  font-family: Playfair Display;
+  font-weight: 700;
+  line-height: 1.16;
+  text-align: center;
 }
 
 .image {
@@ -478,4 +567,9 @@ header {
     margin-top: 29px;
     margin-bottom: 30px;
   }
+}
+
+#refer p {
+  font-family: Graphik;
+  font-size: 16px;
 }

@@ -10,18 +10,16 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body data-page-index="0" class="page-0">
 
   <include src="partials/navbar.html"></include>
 
-  <if condition="top">
-    <include src="partials/deck.html"></include>
-  </if>
+  <include src="partials/deck.html"></include>
 
   <include src="partials/header.html"></include>
 
   <div class="story">
-    <each loop="item in body">
+    <each loop="item in part0">
       <switch expression="item.type">
         <case n="'text'">
           <include src="partials/paragraph.html"></include>
@@ -43,9 +41,10 @@
     </each>
   </div>
 
-  <div class="spectate-dev-footer">
-    <a href="{{ DOC_URL }}" target="_blank">Doc</a>
+  <div id="refer">
   </div>
+
+  <include src="partials/footer.html"></include>
 
   <script src="./script.js"></script>
 

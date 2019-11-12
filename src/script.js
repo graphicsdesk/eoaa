@@ -1,13 +1,38 @@
 import enterView from 'enter-view';
 import textBalancer from 'text-balancer';
 
-import { USE_COVER_HED } from '../config.yml';
+import config from '../config.yml';
+import doc from '../data/doc.json';
+
+/* Custom page stuff */
+
+const pageIndex = parseInt(document.body.getAttribute('data-page-index'));
+
+// Set refer text
+
+if (pageIndex < 2) {
+  const refer = document.getElementById('refer');
+  const referText = doc['refer' + pageIndex].split(',');
+  const referLink = config[
+    ['PART1', 'PART2'][pageIndex] + '_LINK'
+  ]
+  refer.innerHTML = `
+  <p class="g-body paragraph">
+    <a href="${referLink}">${referText[0]},</a>
+    ${referText[1]}
+  </p>
+  `;
+}
+
+// Highlight nav link
+
+document.getElementById('nav-link-' + pageIndex).classList.add('nav-link-highlighted');
 
 // Fade in navbar at scroll trigger
 
 const navbar = document.getElementById('navbar');
 enterView({
-  selector: '.headline',
+  selector: pageIndex === 0 ? '.video-step:nth-child(2)' : '.headline',
   offset: 0.93,
   enter: () => {
     navbar.classList.remove('only-logo');
@@ -18,7 +43,19 @@ enterView({
   },
 });
 
-// Mobile navbar hamburger trigger
+// nav-section-name
+
+const navSectionName = document.getElementById('nav-section-name');
+navSectionName.textContent = pageIndex === 0 ? 'Introduction' : `Part ${pageIndex}: ${doc['sectionhed' + pageIndex]}`;
+
+enterView({
+  selector: '#section-header',
+  offset: 1,
+  enter: () => navSectionName.classList.add('show'),
+  exit: () => navSectionName.classList.remove('show'),
+});
+
+/* Mobile navbar hamburger trigger */
 
 export function hamburgerTrigger() {
   navbar.classList.toggle('show-nav-links');
@@ -26,7 +63,7 @@ export function hamburgerTrigger() {
 
 // Text balance headline and deck
 
-textBalancer.balanceText('.headline, .deck, .video-step p');
+textBalancer.balanceText('.headline, .deck, .video-step p, .pullquote');
 
 /* SVG icon stuff
 
