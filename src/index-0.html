@@ -13,9 +13,7 @@
 <body data-page-index="0" class="page-0">
 
   <include src="partials/navbar.html"></include>
-
   <include src="partials/deck.html"></include>
-
   <include src="partials/header.html"></include>
 
   <div class="story">
@@ -36,6 +34,12 @@
         </case>
         <case n="'image'">
           <include src="partials/image.html"></include>
+        </case>
+        <case n="'video'">
+          <include src="partials/video.html"></include>
+        </case>
+        <case n="'pullquote'">
+          <include src="partials/pullquote.html"></include>
         </case>
       </switch>
     </each>
@@ -82,12 +86,13 @@
                       });
                   }
               } catch(e) { console.log(e); }
+              /*
               if (window.innerWidth <= 460 && window.innerWidth >= 360) {
-                console.log('hi');
                 document.getElementById('g-linguistics-1-300').style.maxWidth = '360px';
                 document.getElementById('g-linguistics-2-300').style.maxWidth = '360px';
                 document.getElementById('g-linguistics-3-300').style.maxWidth = '360px';
               }
+              */
           }
           document.addEventListener('DOMContentLoaded', resizer);
           // feel free to replace throttle with _.throttle, if available

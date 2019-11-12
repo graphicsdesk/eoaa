@@ -40,6 +40,9 @@
         <case n="'image'">
           <include src="partials/image.html"></include>
         </case>
+        <case n="'video'">
+          <include src="partials/video.html"></include>
+        </case>
         <case n="'pullquote'">
           <include src="partials/pullquote.html"></include>
         </case>
@@ -89,9 +92,11 @@
                   }
               } catch(e) { console.log(e); }
               if (window.innerWidth <= 460 && window.innerWidth >= 360) {
+                /*
                 document.getElementById('g-linguistics-1-300').style.maxWidth = '360px';
                 document.getElementById('g-linguistics-2-300').style.maxWidth = '360px';
                 document.getElementById('g-linguistics-3-300').style.maxWidth = '360px';
+                */
               }
           }
           document.addEventListener('DOMContentLoaded', resizer);
