@@ -1,7 +1,11 @@
-.PHONY: download build deploy clean
+.PHONY: dev download build deploy clean
 
 download:
 	node process/download-doc.js
+
+dev:
+	rm -rf dist/*
+	npm run dev
 
 build:
 	rm -rf dist/*

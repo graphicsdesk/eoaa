@@ -111,4 +111,4 @@ export function hamburgerTrigger() {
 
 /* Text balance headline and deck */
 
-textBalancer.balanceText('.headline, .deck, .video-step p, .pullquote');
+textBalancer.balanceText('body.page-1 .headline, .deck, .video-step p, .pullquote');

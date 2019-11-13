@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "patch-package",
-    "dev": "parcel src/index-1.html --global script",
+    "dev": "parcel src/index-1.html src/index-2.html src/index-3.html --global script",
     "build": "parcel build src/index-1.html --global script --public-url .",
     "encrypt": "find ./dist -type f -name 'index-[0-9].html' -exec staticrypt {} gavslead \\;"
   },
