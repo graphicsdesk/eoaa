@@ -5,6 +5,27 @@ pageConfig {
   display: none;
 }
 
-body.page-0 .headline-part {
-  display: none;
+body.page-1 {
+  #video-cover {
+    filter: brightness(0.4);
+    transition-duration: .3s;
+  }
+
+  #video-cover.bright {
+    filter: brightness(1);
+  }
+}
+
+#navbar.only-logo.show-nav {
+  #nav-links {
+    opacity: 1;
+  }
+
+  div.nav-link.nav-link-highlighted, div.nav-link:hover {
+    border-bottom-color: #fff;
+  }
+
+  #nav-links a {
+    color: #fff;
+  }
 }

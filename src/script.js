@@ -1,5 +1,6 @@
 import enterView from 'enter-view';
 import textBalancer from 'text-balancer';
+// import inView from 'in-view';
 
 import config from '../config.yml';
 import doc from '../data/doc.json';
@@ -8,13 +9,12 @@ import doc from '../data/doc.json';
 
 const pageIndex = parseInt(document.body.getAttribute('data-page-index'));
 
-// Set refer text
-
-if (pageIndex < 2) {
+// Set refer text for parts 1 and 2
+if (pageIndex < 3) {
   const refer = document.getElementById('refer');
   const referText = doc['refer' + pageIndex].split(',');
   const referLink = config[
-    ['PART1', 'PART2'][pageIndex] + '_LINK'
+    [null, 'PART2', 'PART3'][pageIndex] + '_LINK'
   ]
   refer.innerHTML = `
   <p class="g-body paragraph">
@@ -28,31 +28,67 @@ if (pageIndex < 2) {
 
 document.getElementById('nav-link-' + pageIndex).classList.add('nav-link-highlighted');
 
-// Fade in navbar at scroll trigger
-
-const navbar = document.getElementById('navbar');
-enterView({
-  selector: pageIndex === 0 ? '.video-step:nth-child(2)' : '.headline',
-  offset: 0.93,
-  enter: () => {
-    navbar.classList.remove('only-logo');
-  },
-  exit: () => {    
-    navbar.classList.remove('show-nav-links');
-    navbar.classList.add('only-logo');
-  },
-});
-
 // nav-section-name
 
 const navSectionName = document.getElementById('nav-section-name');
-navSectionName.textContent = pageIndex === 0 ? 'Introduction' : `Part ${pageIndex}: ${doc['sectionhed' + pageIndex]}`;
+const navSectionNameText = pageIndex === 1 ? 'Introduction' : `Part ${pageIndex}: ${doc['sectionhed' + pageIndex]}`;
+navSectionName.textContent = navSectionNameText;
+
+// TODO for navSectionName: Change to Part 1 when we scroll there
+
+/* Video brightness stuff */
+
+const video = document.getElementById('video-cover');
+const navbar = document.getElementById('navbar'); // Fade in navbar at scroll trigger
+
+if (pageIndex === 1) {
+  enterView({
+    selector: '.video-step:nth-child(2)',
+    offset: 0.96,
+    enter: () => {
+      navbar.classList.add('show-nav');
+      video.classList.add('bright');
+    },
+    exit: () => {
+      navbar.classList.remove('show-nav');
+      video.classList.remove('bright');
+    },
+  });
+
+  // Assume that page 1 is the only one with a change in section name
+  enterView({
+    selector: '.sectionhed',
+    offset: 1,
+    enter: () => {
+      navSectionName.style.opacity = 0;
+      setTimeout(() => {
+        navSectionName.textContent = `Part ${pageIndex}: ${doc['sectionhed' + pageIndex]}`;
+        navSectionName.style.opacity = 1;
+      }, 250);    
+    },
+    exit: () => {
+      navSectionName.style.opacity = 0;
+      setTimeout(() => {
+        navSectionName.textContent = navSectionNameText;
+        navSectionName.style.opacity = 1;
+      }, 250);
+    },
+  });
+} else {
+  navbar.classList.add('show-nav');
+}
 
 enterView({
-  selector: '#section-header',
+  selector: '.headline',
   offset: 1,
-  enter: () => navSectionName.classList.add('show'),
-  exit: () => navSectionName.classList.remove('show'),
+  enter: () => {
+    navbar.classList.remove('only-logo');
+    navSectionName.classList.add('show-section-name');
+  },
+  exit: () => {
+    navbar.classList.add('only-logo');
+    navSectionName.classList.remove('show-section-name');
+  },
 });
 
 /* Mobile navbar hamburger trigger */
@@ -61,14 +97,6 @@ export function hamburgerTrigger() {
   navbar.classList.toggle('show-nav-links');
 }
 
-// Text balance headline and deck
+/* Text balance headline and deck */
 
 textBalancer.balanceText('.headline, .deck, .video-step p, .pullquote');
-
-/* SVG icon stuff
-
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.29 12.3"><defs><style>.cls-1{fill:none;stroke:#999;stroke-miterlimit:10;}</style></defs><title>icon-close</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><line class="cls-1" x1="0.39" y1="0.32" x2="9.9" y2="11.99"/><line class="cls-1" x1="0.39" y1="11.99" x2="9.9" y2="0.32"/></g></g></svg>`;
-const svg64 = window.btoa(svg);
-console.log(`url('data:image/svg+xml;base64,${svg64}')`);
-
-*/

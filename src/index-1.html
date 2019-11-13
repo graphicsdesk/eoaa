@@ -9,16 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
 
-  <title>{{ sectionhed }}</title>
+  <title>{{ headline }}</title>
   <link rel="stylesheet" href="./styles.scss">
   <link rel="shortcut icon" href="https://www.columbiaspectator.com/pb/resources/img/CDS_Favicon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500&display=swap" rel="stylesheet">
 </head>
 
-<body data-page-index="1">
+<body data-page-index="{{ partNum }}" class="page-{{ partNum }}">
 
-  <include src="partials/navbar.html"></include>  
-
+  <include src="partials/navbar.html"></include>
+  <include src="partials/deck.html"></include>
   <include src="partials/header.html"></include>
 
   <div class="story">
@@ -45,6 +45,9 @@
         </case>
         <case n="'pullquote'">
           <include src="partials/pullquote.html"></include>
+        </case>
+        <case n="'sectionhed'">
+          <include src="partials/sectionhed.html"></include>
         </case>
       </switch>
     </each>
@@ -91,13 +94,13 @@
                       });
                   }
               } catch(e) { console.log(e); }
+              /*
               if (window.innerWidth <= 460 && window.innerWidth >= 360) {
-                /*
                 document.getElementById('g-linguistics-1-300').style.maxWidth = '360px';
                 document.getElementById('g-linguistics-2-300').style.maxWidth = '360px';
                 document.getElementById('g-linguistics-3-300').style.maxWidth = '360px';
-                */
               }
+              */
           }
           document.addEventListener('DOMContentLoaded', resizer);
           // feel free to replace throttle with _.throttle, if available

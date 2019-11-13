@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "patch-package",
     "dev": "parcel src/index.html --global script",
-    "dev3": "parcel src/index-0.html src/index-1.html src/index-2.html --global script",
-    "build": "parcel build src/index-0.html --global script --public-url .; parcel build src/index-1.html --global script --public-url ."
+    "dev3": "parcel src/index-1.html src/index-2.html src/index-3.html --global script",
+    "build": "parcel build src/index-1.html --global script --public-url .; parcel build src/index-1.html --global script --public-url ."
   },
   "repository": {
     "type": "git",

@@ -47,15 +47,23 @@ b {
 .cover-hed {
   margin-bottom: 60px;
 
-  header {
+  .header {
     background-color: rgba(0, 0, 0, 0.6);
-    max-width: 760px;
-    color: #fff;
-    transform: translateY(-150%); // TODO: do better;
+    max-width: 700px;
+    transform: translateY(-170%); // TODO: do better;
     align-items: center;
 
-    .byline {
+    .byline, .inline-credits, .pub-date, .headline {
+      color: #fff;
       text-align: center;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    .headline {
+      margin-top: 0;
     }
   }
 }
@@ -70,16 +78,15 @@ b {
   }
 }
 
-#video-cover {
+video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-@media (max-width: 600px) {
-  #video-cover {
-    object-fit: contain;
-  }
+.video video {
+  margin-bottom: 30px;
+  height: auto;
 }
 
 .cover-caption {
@@ -92,7 +99,7 @@ b {
   margin: 7px auto 0 auto;
 }
 
-header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,20 +127,7 @@ header {
     margin-bottom: 17px;
     text-align: center;
     font-weight: 700;
-    font-family: Playfair Display;
-  }
-
-  .headline-part {
-    border-top: 2px solid #121212;
-    margin: 0;
-    margin-top: 5px;
-    font-size: 55px;
-    line-height: 1;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: 700;
-    font-family: Playfair Display;
+    font-family: $playfair;
   }
 
   .deck {
@@ -156,8 +150,29 @@ header {
     margin-bottom: 10px;
   }
 
-  .inline-credits {
+  .inline-credits {  
     font-weight: 600;
+  }
+}
+
+.inline-credits {  
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-family: $graphik;
+  font-size: 16px;
+  line-height: 1.6;
+
+  a {
+    color: black;
+  }
+}
+
+@media (max-width: 500px) {
+  .header .headline {
+    font-size: 46px;
   }
 }
 
@@ -176,7 +191,7 @@ header {
   p {
     background-color: rgba(0, 0, 0, 0.66);
     padding: 0 7px 7px;
-    font-family: Playfair Display;
+    font-family: $playfair;
     font-size: 30px;
     font-weight: 400;
     line-height: 1.4;
@@ -230,7 +245,7 @@ header {
     opacity: 0;
   }
 
-  .hamburger-btn {
+  .hamburger-container {
     opacity: 0;
     visibility: hidden;
   }
@@ -245,6 +260,23 @@ header {
 
 #eye-logo {
   width: 96px;
+}
+
+.hamburger-container {
+  align-self: center;  
+  transition-duration: $fade-transition-duration;
+}
+
+.hamburger-container:before {
+  display: block;
+  content: "";
+  width: 75px;
+  height: $navbar-height;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 25%);
 }
 
 .hamburger-btn {
@@ -294,9 +326,12 @@ header {
   margin-left: 13px;
   opacity: 0;
   transition: opacity $fade-transition-duration;
+  max-width: 1px;
+  white-space: pre;
+  z-index: -1;
 }
 
-#nav-section-name.show {
+#nav-section-name.show-section-name {
   opacity: 1;
 }
 
@@ -317,12 +352,12 @@ header {
     transition: border $fade-transition-duration;
 
     &.nav-link-highlighted {      
-      border-bottom: 3px solid $eye-theme;
+      border-bottom: 3px solid #121212;
     }
   }
 
   div.nav-link:hover {
-    border-bottom: 3px solid $eye-theme;
+    border-bottom: 3px solid #121212;
   }
 
   a {
@@ -334,11 +369,13 @@ header {
     font-size: 14px;
     color: #121212;
     text-decoration: none;
+    transition: color $fade-transition-duration;
   }
 }
 
 .dinkus {
   text-align: center;
+  height: 20px;
 }
 
 // Text sizes on small screens
@@ -423,10 +460,22 @@ header {
 .subhed {
   margin-top: 40px;
   font-family: $georgia;
-  text-align: center;
+  // text-align: center;
   font-size: 22px;
   line-height: 1.63;
   font-weight: bold;
+}
+
+.sectionhed {
+  // border-top: 2px solid #000;
+  margin-top: 80px;
+  font-size: 55px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 17px;
+  text-align: center;
+  font-weight: 700;
+  font-family: $playfair;
 }
 
 .pullquote {
@@ -439,7 +488,7 @@ header {
   border-bottom: 2px solid #121212;
 
   font-size: 40px;
-  font-family: Playfair Display;
+  font-family: $playfair;
   font-weight: 700;
   line-height: 1.16;
   text-align: center;
@@ -573,3 +622,5 @@ header {
   font-family: Graphik;
   font-size: 16px;
 }
+
+

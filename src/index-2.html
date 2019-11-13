@@ -15,11 +15,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500&display=swap" rel="stylesheet">
 </head>
 
-<body data-page-index="2">
+<body data-page-index="{{ partNum }}" class="page-{{ partNum }}">
 
   <include src="partials/navbar.html"></include>  
 
-  <include src="partials/header.html"></include>
+  <include src="partials/header-cover.html"></include>
 
   <div class="story">
     <each loop="item in part2">

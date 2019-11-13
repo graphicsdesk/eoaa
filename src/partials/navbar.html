@@ -7,17 +7,14 @@
 
       <p id="nav-section-name">FILL SECTION NAME</p>
     </div>
-    <button onclick="script.hamburgerTrigger()" class="hamburger-btn">
-      <div class="hamburger"></div>
-    </a>
+    <div class="hamburger-container">
+      <button onclick="script.hamburgerTrigger()" class="hamburger-btn">
+        <div class="hamburger"></div>
+      </button>
+    </div>
   </div>
   <div id="nav-links">
     <each loop="item in [
-      {
-        name: 'Intro',
-        id: 'nav-link-0',
-        link: INTRO_LINK,
-      },
       {
         name: 'Part 1: ' + sectionhed1,
         id: 'nav-link-1',
@@ -27,6 +24,11 @@
         name: 'Part 2: ' + sectionhed2,
         id: 'nav-link-2',
         link: PART2_LINK,
+      },
+      {
+        name: 'Part 3: ' + sectionhed3,
+        id: 'nav-link-3',
+        link: PART3_LINK,
       },
     ]">
       <div class="nav-link" id="{{ item.id }}">          
