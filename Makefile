@@ -6,6 +6,7 @@ download:
 build:
 	rm -rf dist/*
 	npm run build
+	npm run encrypt
 
 deploy: build
 	cd dist && git add . && git commit -m 'Deploy to gh-pages' && git push origin gh-pages

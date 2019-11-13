@@ -55,6 +55,18 @@ if (pageIndex === 1) {
     },
   });
 
+
+  enterView({
+    selector: '.video-step:nth-child(6)',
+    offset: 0.96,
+    enter: () => {
+      video.classList.remove('bright');
+    },
+    exit: () => {
+      video.classList.add('bright');
+    },
+  });
+
   // Assume that page 1 is the only one with a change in section name
   enterView({
     selector: '.sectionhed',

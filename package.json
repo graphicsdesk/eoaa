@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "patch-package",
-    "dev": "parcel src/index.html --global script",
-    "dev3": "parcel src/index-1.html src/index-2.html src/index-3.html --global script",
-    "build": "parcel build src/index-1.html --global script --public-url .; parcel build src/index-1.html --global script --public-url ."
+    "dev": "parcel src/index-1.html --global script",
+    "build": "parcel build src/index-1.html --global script --public-url .",
+    "encrypt": "find ./dist -type f -name 'index-[0-9].html' -exec staticrypt {} gavslead \\;"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "posthtml-expressions": "^1.1.1",
     "posthtml-include": "^1.3.0",
     "sass": "^1.23.0",
+    "staticrypt": "^1.3.2",
     "yaml": "^1.7.1"
   },
   "dependencies": {
