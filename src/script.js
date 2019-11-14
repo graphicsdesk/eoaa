@@ -12,13 +12,12 @@ const pageIndex = parseInt(document.body.getAttribute('data-page-index'));
 // Set refer text for parts 1 and 2
 if (pageIndex < 3) {
   const refer = document.getElementById('refer');
-  const referText = doc['refer' + pageIndex];
   const referLink = config[
     [null, 'PART2', 'PART3'][pageIndex] + '_LINK'
   ]
   refer.innerHTML = `
   <p class="g-body paragraph">
-    <a href="${referLink}">${referText[0]}</a>
+    <a href="${referLink}">Continue reading Part ${[null, 'II', 'III'][pageIndex]}.</a>
   </p>
   `;
 }
@@ -110,4 +109,4 @@ export function hamburgerTrigger() {
 
 /* Text balance headline and deck */
 
-textBalancer.balanceText('body.page-1 .headline, .deck, .video-step p, .pullquote');
+textBalancer.balanceText('.headline, .deck, .video-step p, .pullquote');

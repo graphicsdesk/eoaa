@@ -12,6 +12,7 @@ $fade-transition-duration: 0.25s;
 
 body {
   margin: 0;
+  padding-bottom: 45px;
 }
 
 h1, p {
@@ -48,7 +49,7 @@ b {
   margin-bottom: 60px;
 
   .header {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     max-width: 700px;
     transform: translateY(-170%); // TODO: do better;
     align-items: center;
@@ -152,6 +153,10 @@ video {
 
   .inline-credits {  
     font-weight: 600;
+
+    span {
+      text-align: center;
+    }
   }
 }
 
@@ -172,7 +177,11 @@ video {
 
 @media (max-width: 500px) {
   .header .headline {
-    font-size: 46px;
+    font-size: 37px;
+  }
+
+  .header .inline-credits {
+    font-weight: 400;
   }
 }
 
@@ -190,13 +199,13 @@ video {
 
   p {
     background-color: rgba(0, 0, 0, 0.66);
-    font-family: $playfair;
-    font-size: 27px;
+    font-family: $georgia;
+    font-size: 22px;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.45;
     color: #fff;
     max-width: 540px;
-    padding: 3px 14px 9px;
+    padding: 11px 17px;
   }
 }
 
@@ -380,11 +389,13 @@ video {
 // Text sizes on small screens
 @media (max-width: 600px) {
   .video-step p {
-    font-size: 25px;
+    font-size: 20px;
+    text-align: center;
+    max-width: calc(100vw - 34px - 20px) !important;
   }
 
   .step-deck {
-    margin-top: -40vh;
+    margin-top: -47vh;
   }
 }
 

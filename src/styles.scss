@@ -54,3 +54,41 @@ body.page-1 {
   }
 }
 
+body.page-2 {
+  .cover-hed .header {
+    max-width: 620px;
+  }
+}
+
+body.page-3 {
+  .cover-hed .header {
+    transform: translateY(-145%);
+  }
+}
+
+body.page-2, body.page-3 {  
+  #navbar.only-logo.show-nav {
+    #nav-links {
+      opacity: 1;
+    }
+
+    div.nav-link.nav-link-highlighted, div.nav-link:hover {
+      border-bottom-color: #121212;
+    }
+
+    #nav-links a {
+      color: #121212;
+    }
+  }
+
+  #g-time-frames-box {
+    margin-top: 30px !important;
+    margin-bottom: 35px !important;
+
+    .g-ranges p, #subhed p {
+      font-weight: 400;
+    }
+  }
+
+}
+
