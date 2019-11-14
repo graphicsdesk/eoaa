@@ -5,6 +5,12 @@ pageConfig {
   display: none;
 }
 
+@media (min-width: 890px) {  
+  .header .headline {
+    min-width: 790px;
+  }
+}
+
 body.page-1 {
   #video-cover {
     filter: brightness(0.4);
