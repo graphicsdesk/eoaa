@@ -12,14 +12,13 @@ const pageIndex = parseInt(document.body.getAttribute('data-page-index'));
 // Set refer text for parts 1 and 2
 if (pageIndex < 3) {
   const refer = document.getElementById('refer');
-  const referText = doc['refer' + pageIndex].split(',');
+  const referText = doc['refer' + pageIndex];
   const referLink = config[
     [null, 'PART2', 'PART3'][pageIndex] + '_LINK'
   ]
   refer.innerHTML = `
   <p class="g-body paragraph">
-    <a href="${referLink}">${referText[0]},</a>
-    ${referText[1]}
+    <a href="${referLink}">${referText[0]}</a>
   </p>
   `;
 }
