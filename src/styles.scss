@@ -21,9 +21,9 @@ body.page-1 {
     }
   }
 
-  .video-step:nth-child(6),
   .video-step:nth-child(7),
-  .video-step:nth-child(8) {
+  .video-step:nth-child(8),
+  .video-step:nth-child(9) {
     p {
       background: rgba(255, 255, 255, 0.8);
       color: #121212;
@@ -52,6 +52,10 @@ body.page-1 {
   .g-ranges p, #subhed p {
     font-weight: 400;
   }
+}
+
+#g-time-frames-300 .g-labels p {
+  font-weight: 400;
 }
 
 body.page-2 {

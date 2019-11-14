@@ -42,7 +42,7 @@ const navbar = document.getElementById('navbar'); // Fade in navbar at scroll tr
 if (pageIndex === 1) {
   enterView({
     selector: '.video-step:nth-child(2)',
-    offset: 0.96,
+    offset: 0.97,
     enter: () => {
       navbar.classList.add('show-nav');
       video.classList.add('bright');
@@ -55,8 +55,8 @@ if (pageIndex === 1) {
 
 
   enterView({
-    selector: '.video-step:nth-child(6)',
-    offset: 0.96,
+    selector: '.video-step:nth-child(7)',
+    offset: 0.97,
     enter: () => {
       video.classList.remove('bright');
     },
