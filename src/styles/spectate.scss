@@ -72,9 +72,10 @@ b {
 .deck-overlay {
   .cover {
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
     margin-bottom: 0;
   }
 }
@@ -212,6 +213,8 @@ video {
   align-items: center;
   margin-top: -50vh;
   padding-bottom: 10vh;
+  position: relative;
+  z-index: 2;
 }
 
 .video-step {

@@ -5,7 +5,15 @@ pageConfig {
   display: none;
 }
 
-body.page-3 {
+.story {
+  padding-bottom: 20px;
+}
+
+.header .headline {
+  font-style: normal !important;
+}
+
+.story-page-3 {
   .story p:last-child:after {
     content: "";
     display: inline-block;
@@ -24,7 +32,7 @@ body.page-3 {
   }
 }
 
-body.page-1 {
+.story-page-1 {
   #video-cover {
     filter: brightness(0.4);
     transition-duration: .3s;
@@ -77,13 +85,13 @@ body.page-1 {
   font-weight: 400;
 }
 
-body.page-2 {
+.story-page-2 {
   .cover-hed .header {
     max-width: 620px;
   }
 }
 
-body.page-2, body.page-3 {  
+.story-page-2, .story-page-3 {  
   #navbar.only-logo.show-nav {
     #nav-links {
       opacity: 1;

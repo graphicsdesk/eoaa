@@ -7,7 +7,7 @@ import doc from '../data/doc.json';
 
 /* Custom page stuff */
 
-const pageIndex = parseInt(document.body.getAttribute('data-page-index'));
+const pageIndex = parseInt(document.getElementById('story-page').getAttribute('data-page-index'));
 
 // Set refer text for parts 1 and 2
 if (pageIndex < 3) {

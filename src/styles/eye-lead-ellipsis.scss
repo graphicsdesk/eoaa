@@ -1,5 +1,9 @@
 /* These stylels remove the Ellipsis default styles for a web page */
 
+* {
+  overflow: visible !important;
+}
+
 .pb-container {
     width: 100%;
 }

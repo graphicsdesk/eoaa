@@ -17,39 +17,43 @@
 
 <body data-page-index="{{ partNum }}" class="page-{{ partNum }}">
 
-  <include src="partials/navbar.html"></include>
-  <include src="partials/deck.html"></include>
-  <include src="partials/header.html"></include>
+  <div class="story-page-{{ partNum }}" id="story-page" data-page-index="{{ partNum }}">
 
-  <div class="story">
-    <each loop="item in part1">
-      <switch expression="item.type">
-        <case n="'text'">
-          <include src="partials/paragraph.html"></include>
-        </case>
-        <case n="'subhed'">
-          <include src="partials/subhed.html"></include>
-        </case>
-        <case n="'image'">
-          <include src="partials/image.html"></include>
-        </case>
-        <case n="'video'">
-          <include src="partials/video.html"></include>
-        </case>
-        <case n="'pullquote'">
-          <include src="partials/pullquote.html"></include>
-        </case>
-        <case n="'sectionhed'">
-          <include src="partials/sectionhed.html"></include>
-        </case>
-      </switch>
-    </each>
+    <include src="partials/navbar.html"></include>
+    <include src="partials/deck.html"></include>
+    <include src="partials/header.html"></include>
+
+    <div class="story">
+      <each loop="item in part1">
+        <switch expression="item.type">
+          <case n="'text'">
+            <include src="partials/paragraph.html"></include>
+          </case>
+          <case n="'subhed'">
+            <include src="partials/subhed.html"></include>
+          </case>
+          <case n="'image'">
+            <include src="partials/image.html"></include>
+          </case>
+          <case n="'video'">
+            <include src="partials/video.html"></include>
+          </case>
+          <case n="'pullquote'">
+            <include src="partials/pullquote.html"></include>
+          </case>
+          <case n="'sectionhed'">
+            <include src="partials/sectionhed.html"></include>
+          </case>
+        </switch>
+      </each>
+    </div>
+
+    <div id="refer">
+    </div>
+
+    <include src="partials/footer.html"></include>
+
   </div>
-
-  <div id="refer">
-  </div>
-
-  <include src="partials/footer.html"></include>
 
   <script src="./script.js"></script>
 </body>

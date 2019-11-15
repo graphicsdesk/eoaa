@@ -1,10 +1,7 @@
 USE_COVER_HED: false
 DOC_URL: https://docs.google.com/document/d/1Sba5SfdWovkDL2bfPSB2xKdXSSetbh-AxhhoHdpCZsk/edit
 
-PART1_LINK: index-1.html
-PART2_LINK: index-2.html
-PART3_LINK: index-3.html
+PART1_LINK: https://www.columbiaspectator.com/eye-lead/2019/11/15/students-and-faculty-say-gender-based-harassment-and-discrimination-at-columbia-is-systemic-why-are-they-turning-away-from-the-system-built-to-address-it
+PART2_LINK: https://www.columbiaspectator.com/eye-lead/2019/11/15/eoaa-harassment-discrimination-title-ix-part-2
+PART3_LINK: https://www.columbiaspectator.com/eye-lead/2019/11/15/eoaa-harassment-discrimination-title-ix-part-3
 
-PART1_LINK_OLD: https://www.columbiaspectator.com/eye-lead/2019/10/23/is-columbias-department-system-ready-to-evolve/
-PART2_LINK_OLD: https://www.columbiaspectator.com/eye-lead/2019/10/23/is-columbias-department-system-ready-to-evolve/
-PART3_LINK_OLD: https://www.columbiaspectator.com/eye-lead/2019/10/23/is-columbias-department-system-ready-to-evolve/

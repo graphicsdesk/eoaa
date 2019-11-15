@@ -1,4 +1,6 @@
-.PHONY: download dev build upload-assets deploy gh-pages clean
+.PHONY: download dev build upload-assets deploy gh-pages clean all
+
+all: download build upload-assets
 
 download:
 	node process/download-doc.js
@@ -6,7 +8,7 @@ download:
 build:
 	rm -rf dist/*
 	npm run build
-	npm run encrypt
+	# npm run encrypt
 
 upload-assets:
 	aws s3 rm s3://spectator-static-assets/eoaa/ --recursive --exclude "*" --include "*.mp4" --include "*.png" --include "*.css" --include "*.js" --profile=spec
