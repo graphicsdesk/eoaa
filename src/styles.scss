@@ -5,6 +5,19 @@ pageConfig {
   display: none;
 }
 
+body.page-3 {
+  .story p:last-child:after {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: #121212;
+    position: relative;
+    top: 1px;
+    left: 5px;
+  }
+}
+
 @media (min-width: 890px) {  
   .header .headline {
     min-width: 790px;
@@ -67,12 +80,6 @@ body.page-1 {
 body.page-2 {
   .cover-hed .header {
     max-width: 620px;
-  }
-}
-
-body.page-3 {
-  .cover-hed .header {
-    transform: translateY(-145%);
   }
 }
 

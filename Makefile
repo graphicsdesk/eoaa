@@ -15,7 +15,7 @@ upload-assets:
 deploy:
 	cd dist && git add . && git commit -m 'Deploy to gh-pages' && git push origin gh-pages
 
-gh-pages: build upload-assets deploy
+gh-pages: download build upload-assets deploy
 
 clean:
 	rm -rf dist

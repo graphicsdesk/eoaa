@@ -94,6 +94,17 @@ video {
   }
 }
 
+@media (max-width: 500px) {
+  .video {
+    height: 90vh;
+
+    video {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 .cover-caption {
   font-size: 15px;
   font-family: $georgia;
