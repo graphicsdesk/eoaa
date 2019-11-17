@@ -3,7 +3,12 @@ import textBalancer from 'text-balancer';
 // import inView from 'in-view';
 
 import config from '../config.yml';
-import doc from '../data/doc.json';
+
+
+// CUSTOM last minute shit
+
+const typoBox = document.querySelector('.video-step:nth-child(5) p');
+typoBox.textContent = typoBox.textContent.replace('handes', 'handles');
 
 /* Custom page stuff */
 
@@ -29,7 +34,7 @@ document.getElementById('nav-link-' + pageIndex).classList.add('nav-link-highlig
 // nav-section-name
 
 const navSectionName = document.getElementById('nav-section-name');
-const navSectionNameText = pageIndex === 1 ? 'Introduction' : `Part ${pageIndex}: ${doc['sectionhed' + pageIndex]}`;
+const navSectionNameText = pageIndex === 1 ? 'Introduction' : `Part ${pageIndex}: ${['Coming Forward', 'The EOAA', 'Beyond the System'][pageIndex - 1]}`;
 navSectionName.textContent = navSectionNameText;
 
 // TODO for navSectionName: Change to Part 1 when we scroll there
@@ -42,7 +47,7 @@ const navbar = document.getElementById('navbar'); // Fade in navbar at scroll tr
 if (pageIndex === 1) {
   enterView({
     selector: '.video-step:nth-child(2)',
-    offset: 0.97,
+    offset: 0.3,
     enter: () => {
       navbar.classList.add('show-nav');
       video.classList.add('bright');
@@ -56,7 +61,7 @@ if (pageIndex === 1) {
 
   enterView({
     selector: '.video-step:nth-child(7)',
-    offset: 0.97,
+    offset: 0.3,
     enter: () => {
       video.classList.remove('bright');
     },
@@ -72,7 +77,7 @@ if (pageIndex === 1) {
     enter: () => {
       navSectionName.style.opacity = 0;
       setTimeout(() => {
-        navSectionName.textContent = `Part ${pageIndex}: ${doc['sectionhed' + pageIndex]}`;
+        navSectionName.textContent = `Part ${pageIndex}: ${['Coming Forward', 'The EOAA', 'Beyond the System'][pageIndex - 1]}`;
         navSectionName.style.opacity = 1;
       }, 250);    
     },
