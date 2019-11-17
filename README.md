@@ -1,3 +1,1 @@
-# EOAA Lead
-
-[Spectate UI Features project board](https://github.com/spec-journalism/spectate/projects/1).
+# [EOAA Lead](https://www.columbiaspectator.com/eye-lead/2019/11/15/students-and-faculty-say-gender-based-harassment-and-discrimination-at-columbia-is-systemic-why-are-they-turning-away-from-the-system-built-to-address-it/)
