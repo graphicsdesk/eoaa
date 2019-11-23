@@ -4,15 +4,16 @@ import textBalancer from 'text-balancer';
 
 import config from '../config.yml';
 
-
-// CUSTOM last minute shit
-
-const typoBox = document.querySelector('.video-step:nth-child(5) p');
-typoBox.textContent = typoBox.textContent.replace('handes', 'handles');
-
 /* Custom page stuff */
 
 const pageIndex = parseInt(document.getElementById('story-page').getAttribute('data-page-index'));
+
+
+// CUSTOM last minute shit
+if (pageIndex === 1) {
+  const typoBox = document.querySelector('.video-step:nth-child(5) p');
+  typoBox.textContent = typoBox.textContent.replace('handes', 'handles');
+}
 
 // Set refer text for parts 1 and 2
 if (pageIndex < 3) {
